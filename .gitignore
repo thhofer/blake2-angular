@@ -6,6 +6,10 @@
 /tmp
 /out-tsc
 
+# packagr output
+.ng_pkg_build/
+/dist.tgz
+
 # dependencies
 /node_modules
 
