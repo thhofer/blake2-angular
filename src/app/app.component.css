@@ -1,0 +1,14 @@
+.inputGroup {
+  display: flex;
+}
+
+
+.inputGroup > label {
+  flex: 250px none;
+  padding-right: 25px;
+}
+
+.inputGroup > input {
+  flex: 250px 1;
+  padding-right: 150px;
+}

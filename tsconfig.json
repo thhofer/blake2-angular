@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "inlineSources": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "paths": {
+      "@angular/core": ["../node_modules/@angular/core"],
+      "@protocoder/blake2": ["@protocoder/blake2"]
+    },
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true
+  }
+}

@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<h2>You can run some tests here!</h2>
+<form action="#">
+  <div class="inputGroup">
+    <label for="plaintext">value to hash: </label>
+    <input type="text" id="plaintext" #plaintext>
+  </div>
+
+  <div>
+    <button (click)="hash(); false;">hash!</button>
+  </div>
+</form>
+
+<hr>
+
+<div>
+  <span id="output">{{content}}</span>
+</div>
+
