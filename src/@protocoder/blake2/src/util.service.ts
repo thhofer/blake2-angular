@@ -29,7 +29,7 @@ export class UtilService {
     return input.reduce<string>(hexAndConcatenate, '');
 
     // can't have lambdas in static functions: see https://github.com/dherges/ng-packagr/issues/696
-    function hexAndConcatenate(previousValue, value, i, a) {
+    function hexAndConcatenate(previousValue: string, value: number, i: any, a: any) {
       return previousValue + (value < 16 ? '0' : '') + value.toString(16);
     }
   }
@@ -40,6 +40,6 @@ export class UtilService {
    * @returns  the resulting hex string
    */
   static uint32ToHex(val: number): string {
-    return (0x100000000 + val).toString(16).substring(1)
+    return (0x100000000 + val).toString(16).substring(1);
   }
 }

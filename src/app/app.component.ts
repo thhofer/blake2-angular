@@ -7,7 +7,7 @@ import { Blake2bService } from '../@protocoder/blake2/src/blake2b.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild("plaintext") plaintext: ElementRef;
+  @ViewChild('plaintext') plaintext: ElementRef;
 
   title = 'Blake2-angular demo';
   content = '';

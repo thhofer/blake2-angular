@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": true,
@@ -11,8 +12,12 @@
     "strictNullChecks": true,
     "noImplicitAny": true,
     "paths": {
-      "@angular/core": ["../node_modules/@angular/core"],
-      "@protocoder/blake2": ["@protocoder/blake2"]
+      "@angular/core": [
+        "../node_modules/@angular/core"
+      ],
+      "@protocoder/blake2": [
+        "@protocoder/blake2"
+      ]
     },
     "target": "es5",
     "typeRoots": [
@@ -21,7 +26,9 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "module": "es2015",
+    "baseUrl": "./"
   },
   "angularCompilerOptions": {
     "strictMetadataEmit": true

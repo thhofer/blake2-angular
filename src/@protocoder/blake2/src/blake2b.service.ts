@@ -38,7 +38,7 @@ export class Blake2bService {
    * and thus need to double the offsets!
    */
   private readonly SIGMA82: number[] = this.SIGMA8.map(v => {
-    return 2 * v
+    return 2 * v;
   });
 
 
@@ -53,13 +53,13 @@ export class Blake2bService {
       throw new Error('Illegal key, expected Uint8Array with 0 < length <= 64');
     }
 
-    let context = new Blake2bContext(length);
+    const context = new Blake2bContext(length);
 
     for (let i = 0; i < 16; i++) {
       context.h[i] = this.BLAKE2B_IV32[i];
     }
 
-    let keylen = key ? key.length : 0;
+    const keylen = key ? key.length : 0;
     context.h[0] ^= 0x01010000 ^ (keylen << 8) ^ length;
 
     // key the hash, if applicable
@@ -92,7 +92,7 @@ export class Blake2bService {
 
     this.compress(context, true);
 
-    let out = new Uint8Array(context.length);
+    const out = new Uint8Array(context.length);
     for (let i = 0; i < context.length; i++) {
       out[i] = context.h[i >> 2] >> (8 * (i & 3));
     }
@@ -100,15 +100,15 @@ export class Blake2bService {
   }
 
   hash(input: string | Buffer | Uint8Array, key?: Uint8Array, outlen: number = 64): Uint8Array {
-    let normalizedInput = UtilService.normalizeInput(input);
+    const normalizedInput = UtilService.normalizeInput(input);
 
-    let context = this.init(outlen, key);
+    const context = this.init(outlen, key);
     this.update(context, normalizedInput);
     return this.final(context);
   }
 
   hashToHex(input: string | Buffer | Uint8Array, key?: Uint8Array, outlen: number = 64): string {
-    let hash = this.hash(input, key, outlen);
+    const hash = this.hash(input, key, outlen);
     return UtilService.toHex(hash);
   }
 
@@ -120,7 +120,7 @@ export class Blake2bService {
    * @param  b the position from which the value should be added
    */
   private add64WithinArray(array: Uint32Array, a: number, b: number) {
-    let o0 = array[a] + array[b];
+    const o0 = array[a] + array[b];
     let o1 = array[a + 1] + array[b + 1];
     if (o0 >= 0x100000000) {
       o1++;
@@ -159,10 +159,10 @@ export class Blake2bService {
 
   private gMixing(a: number, b: number, c: number, d: number,
                   ix: number, iy: number, m: Uint32Array, v: Uint32Array): void {
-    let x0 = m[ix];
-    let x1 = m[ix + 1];
-    let y0 = m[iy];
-    let y1 = m[iy + 1];
+    const x0 = m[ix];
+    const x1 = m[ix + 1];
+    const y0 = m[iy];
+    const y1 = m[iy + 1];
 
     this.add64WithinArray(v, a, b);
     this.add64Constant(v, a, x0, x1);
@@ -200,8 +200,8 @@ export class Blake2bService {
   }
 
   private compress(ctx: Blake2bContext, last: boolean): void {
-    let v = new Uint32Array(32);
-    let m = new Uint32Array(32);
+    const v = new Uint32Array(32);
+    const m = new Uint32Array(32);
 
     let i: number;
 
@@ -240,7 +240,7 @@ export class Blake2bService {
     }
 
     for (i = 0; i < 16; i++) {
-      ctx.h[i] = ctx.h[i] ^ v[i] ^ v[i + 16]
+      ctx.h[i] = ctx.h[i] ^ v[i] ^ v[i + 16];
     }
   }
 }
