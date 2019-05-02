@@ -1,6 +1,6 @@
 {
   "name": "@protocoder/blake2",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "angular implementation of blake2",
   "license": "CC0-1.0",
   "scripts": {
@@ -26,8 +26,8 @@
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.0",
-    "@angular/cli": "7.3.1",
+    "@angular-devkit/build-angular": "^0.13.8",
+    "@angular/cli": "^7.3.8",
     "@angular/compiler-cli": "7.2.4",
     "@angular/language-service": "7.2.4",
     "@types/jasmine": "~2.8.3",
@@ -35,12 +35,12 @@
     "codelyzer": "^4.0.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.0",
+    "karma": "^4.1.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^4.7.0",
+    "ng-packagr": "^5.1.0",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tsickle": "^0.34.3",
