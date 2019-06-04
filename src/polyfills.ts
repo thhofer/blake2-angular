@@ -32,3 +32,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+// required for buffer support
+
+global.Buffer = global.Buffer || require('buffer').Buffer;

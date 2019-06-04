@@ -1,6 +1,6 @@
 {
   "name": "@protocoder/blake2",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "angular implementation of blake2",
   "license": "CC0-1.0",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e --no-webdriver-update",
     "packagr": "ng-packagr -p ng-package.json"
   },
   "private": false,
@@ -41,7 +41,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^5.1.0",
-    "protractor": "~5.1.2",
+    "protractor": "^6.0.0",
     "ts-node": "~4.1.0",
     "tsickle": "^0.34.3",
     "tslint": "~5.9.1",

@@ -1,4 +1,4 @@
-import { AppPage } from './app.po';
+import {AppPage} from './app.po';
 
 describe('blake2-angular App', () => {
   let page: AppPage;
@@ -7,8 +7,9 @@ describe('blake2-angular App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to Blake2-angular demo!');
+  it('should display welcome message', async () => {
+    await page.navigateTo();
+    const paragraphText = await page.getParagraphText();
+    expect(paragraphText).toEqual('Welcome to Blake2-angular demo!');
   });
 });
